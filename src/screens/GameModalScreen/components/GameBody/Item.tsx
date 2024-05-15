@@ -33,5 +33,6 @@ const Container = styled.Pressable<{width: number; active: boolean}>`
   padding: 24px;
   width: ${({width}) => width}%;
   height: ${({width}) => width}%;
-  background-color: ${({active}) => (active ? 'goldenrod' : 'transparent')};
+  background-color: ${({active, theme}) =>
+    active ? theme.colors.secondary : 'transparent'};
 `;

@@ -1,5 +1,5 @@
 import React, {PropsWithChildren, memo} from 'react';
-import {GestureResponderEvent, Text} from 'react-native';
+import {GestureResponderEvent} from 'react-native';
 import styled from 'styled-components/native';
 
 type ButtonProps = PropsWithChildren<{
@@ -15,10 +15,15 @@ export const Button = memo<ButtonProps>(({children, onPress}) => {
 });
 
 const Container = styled.TouchableOpacity<{width?: number}>`
-  background-color: goldenrod;
-  padding: 4px 14px;
+  padding: 12px 14px;
   border-radius: 16px;
   justify-content: center;
   align-items: center;
+  background-color: ${({theme}) => theme.colors.primary};
   width: ${({width}) => (width ? `${width}%` : 'undefined')};
+`;
+
+const Text = styled.Text`
+  font-weight: 700;
+  color: ${({theme}) => theme.colors.lightText};
 `;

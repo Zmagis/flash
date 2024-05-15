@@ -25,7 +25,6 @@ export const Input = memo<InputProps>(
   },
 );
 
-// TODO: use theme
 const Container = styled.View<{width?: number}>`
   width: ${({width}) => (width ? `${width}%` : 'undefined')};
 `;
@@ -36,16 +35,15 @@ const Label = styled.Text`
 `;
 
 const ErrorMessage = styled.Text`
-  color: red;
   font-size: 12px;
+  color: ${({theme}) => theme.colors.error};
 `;
 
-// TODO: use theme
 const TextInput = styled.TextInput<{width?: number}>`
-  color: #333;
   padding: 12px 16px;
   border-radius: 8px;
   border-width: 1px;
-  border-color: #ccc;
   width: 100%;
+  color: ${({theme}) => theme.colors.text};
+  border-color: ${({theme}) => theme.colors.primary};
 `;

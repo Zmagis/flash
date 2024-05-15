@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {Text} from 'react-native';
+import styled from 'styled-components/native';
 
 export const UsersList = memo(() => {
   return (
@@ -8,3 +8,8 @@ export const UsersList = memo(() => {
     </>
   );
 });
+
+const Text = styled.Text`
+  font-weight: 700;
+  color: ${({theme}) => theme.colors.text};
+`;

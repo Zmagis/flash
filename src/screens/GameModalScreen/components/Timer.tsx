@@ -10,23 +10,23 @@ type TimerProps = {
 
 export const Timer = ({startTimer, onTimeEnd}: TimerProps) => {
   const [countdown, setCountdown] = useState(TIME);
-  const [littleTime, setLittleTime] = useState(false);
+  const [isEnding, setIsEnding] = useState(false);
   const timerRef = useRef<string | number | NodeJS.Timeout | undefined>();
 
   const formatCountdown = useCallback(() => {
     const minutes = Math.floor(countdown / 60);
     const seconds = countdown % 60;
 
-    if (seconds <= 3 && !littleTime) {
-      setLittleTime(true);
+    if (seconds <= 3 && !isEnding) {
+      setIsEnding(true);
     }
 
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  }, [countdown, littleTime]);
+  }, [countdown, isEnding]);
 
   const startGame = useCallback(() => {
     setCountdown(TIME);
-    setLittleTime(false);
+    setIsEnding(false);
     timerRef.current = setInterval(() => {
       setCountdown(prevCountdown => {
         if (prevCountdown === 1) {
@@ -51,11 +51,12 @@ export const Timer = ({startTimer, onTimeEnd}: TimerProps) => {
     };
   }, [startGame, startTimer]);
 
-  return <Container littleTime={littleTime}>{formatCountdown()}</Container>;
+  return <Container isEnding={isEnding}>{formatCountdown()}</Container>;
 };
 
-const Container = styled.Text<{littleTime: boolean}>`
+const Container = styled.Text<{isEnding: boolean}>`
   text-align: center;
   font-size: 24px;
-  color: ${({littleTime}) => (littleTime ? 'red' : 'black')};
+  color: ${({isEnding, theme}) =>
+    isEnding ? theme.colors.error : theme.colors.text};
 `;
