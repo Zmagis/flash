@@ -10,6 +10,7 @@ module.exports = {
           '@screens': './src/screens',
           '@types': './src/types',
           '@navigators': './src/navigators',
+          '@state': './src/state',
         },
       },
     ],

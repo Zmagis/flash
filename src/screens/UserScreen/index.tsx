@@ -1,11 +1,12 @@
 import React, {memo} from 'react';
-import {Text} from 'react-native';
-import {ScreenContainer} from '@components/ScreenContainer';
 
-export const UserScreen = memo(() => {
-  return (
-    <ScreenContainer>
-      <Text>User; change user</Text>
-    </ScreenContainer>
-  );
-});
+import {ScreenContainer} from '@components/ScreenContainer';
+import {NewUserForm} from './components/NewUserForm';
+import {UsersList} from './components/UsersList';
+
+export const UserScreen = memo(() => (
+  <ScreenContainer>
+    <NewUserForm />
+    <UsersList />
+  </ScreenContainer>
+));

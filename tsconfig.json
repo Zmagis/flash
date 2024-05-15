@@ -8,6 +8,7 @@
       "@navigators/*": ["src/navigators/*"],
       "@screens/*": ["src/screens/*"],
       "@types/*": ["src/types/*"],
+      "@state/*": ["src/state/*"],
     }
   }
 }

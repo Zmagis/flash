@@ -14,6 +14,7 @@ export const ScreenContainer = memo<ScreenContainerProps>(({children}) => (
 ));
 
 const Container = styled.View`
-  padding-horizontal: ${SCREEN_PADDING.horizontal}px;
   height: 100%;
+  padding-horizontal: ${SCREEN_PADDING.horizontal}px;
+  padding-vertical: ${SCREEN_PADDING.vertical}px;
 `;
