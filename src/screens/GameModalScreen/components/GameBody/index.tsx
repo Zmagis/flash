@@ -4,6 +4,7 @@ import {Item} from './Item';
 import {Text, View} from 'react-native';
 import {GameState} from '../..';
 import Sound from 'react-native-sound';
+import {Loader} from '@components/Loader';
 
 const ITEMS_COUNT = 16;
 const ITEMS = Array.from({length: ITEMS_COUNT}, (_, index) => index + 1);
@@ -70,7 +71,7 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
     <View>
       <Text>Strike - {strike}</Text>
       <Text>Score - {score}</Text>
-      {(loadingAccurateAudio || loadingMissedAudio) && <Text>Loading...</Text>}
+      {(loadingAccurateAudio || loadingMissedAudio) && <Loader />}
       {gameState === GameState.Playing && (
         <Container>
           {ITEMS.map((id, index) => (

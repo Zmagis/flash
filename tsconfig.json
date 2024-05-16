@@ -9,6 +9,8 @@
       "@screens/*": ["src/screens/*"],
       "@types/*": ["src/types/*"],
       "@state/*": ["src/state/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
     }
   }
 }

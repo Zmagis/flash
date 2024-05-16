@@ -776,7 +776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-arrow-functions@npm:^7.0.0, @babel/plugin-transform-arrow-functions@npm:^7.24.1":
+"@babel/plugin-transform-arrow-functions@npm:^7.0.0, @babel/plugin-transform-arrow-functions@npm:^7.0.0-0, @babel/plugin-transform-arrow-functions@npm:^7.24.1":
   version: 7.24.1
   resolution: "@babel/plugin-transform-arrow-functions@npm:7.24.1"
   dependencies:
@@ -1118,7 +1118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-nullish-coalescing-operator@npm:^7.24.1":
+"@babel/plugin-transform-nullish-coalescing-operator@npm:^7.0.0-0, @babel/plugin-transform-nullish-coalescing-operator@npm:^7.24.1":
   version: 7.24.1
   resolution: "@babel/plugin-transform-nullish-coalescing-operator@npm:7.24.1"
   dependencies:
@@ -1180,7 +1180,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-optional-chaining@npm:^7.24.1, @babel/plugin-transform-optional-chaining@npm:^7.24.5":
+"@babel/plugin-transform-optional-chaining@npm:^7.0.0-0, @babel/plugin-transform-optional-chaining@npm:^7.24.1, @babel/plugin-transform-optional-chaining@npm:^7.24.5":
   version: 7.24.5
   resolution: "@babel/plugin-transform-optional-chaining@npm:7.24.5"
   dependencies:
@@ -1328,7 +1328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-shorthand-properties@npm:^7.0.0, @babel/plugin-transform-shorthand-properties@npm:^7.24.1":
+"@babel/plugin-transform-shorthand-properties@npm:^7.0.0, @babel/plugin-transform-shorthand-properties@npm:^7.0.0-0, @babel/plugin-transform-shorthand-properties@npm:^7.24.1":
   version: 7.24.1
   resolution: "@babel/plugin-transform-shorthand-properties@npm:7.24.1"
   dependencies:
@@ -1362,7 +1362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-template-literals@npm:^7.24.1":
+"@babel/plugin-transform-template-literals@npm:^7.0.0-0, @babel/plugin-transform-template-literals@npm:^7.24.1":
   version: 7.24.1
   resolution: "@babel/plugin-transform-template-literals@npm:7.24.1"
   dependencies:
@@ -1562,7 +1562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.13.0":
+"@babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.16.7":
   version: 7.24.1
   resolution: "@babel/preset-typescript@npm:7.24.1"
   dependencies:
@@ -1652,6 +1652,15 @@ __metadata:
   version: 0.2.3
   resolution: "@bcoe/v8-coverage@npm:0.2.3"
   checksum: 850f9305536d0f2bd13e9e0881cb5f02e4f93fad1189f7b2d4bebf694e3206924eadee1068130d43c11b750efcc9405f88a8e42ef098b6d75239c0f047de1a27
+  languageName: node
+  linkType: hard
+
+"@egjs/hammerjs@npm:^2.0.17":
+  version: 2.0.17
+  resolution: "@egjs/hammerjs@npm:2.0.17"
+  dependencies:
+    "@types/hammerjs": ^2.0.36
+  checksum: 8945137cec5837edd70af3f2e0ea621543eb0aa3b667e6269ec6485350f4d120c2434b37c7c30b1cf42a65275dd61c1f24626749c616696d3956ac0c008c4766
   languageName: node
   linkType: hard
 
@@ -2805,6 +2814,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hammerjs@npm:^2.0.36":
+  version: 2.0.45
+  resolution: "@types/hammerjs@npm:2.0.45"
+  checksum: 40a29067c485a2a1f4345718104218fcf769adb1dbe091cdb6f679b3293dfa0798b207eb498ee7fd79ae8664c999117738fa0c01753f7465a639128f38c3ff5b
+  languageName: node
+  linkType: hard
+
 "@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0, @types/istanbul-lib-coverage@npm:^2.0.1":
   version: 2.0.6
   resolution: "@types/istanbul-lib-coverage@npm:2.0.6"
@@ -3620,6 +3636,13 @@ __metadata:
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
   checksum: 9706c088a283058a8a99e0bf91b0a2f75497f185980d9ffa8b304de1d9e58ebda7c72c07ebf01dadedaac5b2907b2c6f566f660d62bd336c3468e960403b9d65
+  languageName: node
+  linkType: hard
+
+"base-64@npm:0.1.0":
+  version: 0.1.0
+  resolution: "base-64@npm:0.1.0"
+  checksum: 5a42938f82372ab5392cbacc85a5a78115cbbd9dbef9f7540fa47d78763a3a8bd7d598475f0d92341f66285afd377509851a9bb5c67bbecb89686e9255d5b3eb
   languageName: node
   linkType: hard
 
@@ -5151,11 +5174,17 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.1
+    react-native-blob-util: ^0.19.9
+    react-native-gesture-handler: ^2.16.2
+    react-native-orientation-locker: ^1.7.0
+    react-native-reanimated: ^3.11.0
+    react-native-reanimated-carousel: ^3.5.1
     react-native-safe-area-context: ^4.10.1
     react-native-screens: ^3.31.1
     react-native-sound: ^0.11.2
     react-redux: ^9.1.2
     react-test-renderer: 18.2.0
+    redux-persist-filesystem-storage: ^4.2.0
     styled-components: ^6.1.11
     typescript: 5.0.4
   languageName: unknown
@@ -5385,7 +5414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.3":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -5574,6 +5603,15 @@ __metadata:
   dependencies:
     source-map: ^0.7.3
   checksum: b5f874eaa65b70d88df7a4ce3b20d73312bb0bc73410f1b63d708f02e1c532ae16975da84e23b977eab8592ac95d7e6fc0c4094c78604fd0a092ed886c62aa7a
+  languageName: node
+  linkType: hard
+
+"hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.2
+  resolution: "hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    react-is: ^16.7.0
+  checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
   languageName: node
   linkType: hard
 
@@ -8186,7 +8224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -8279,7 +8317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.0, react-is@npm:^16.13.1":
+"react-is@npm:^16.13.0, react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
@@ -8290,6 +8328,94 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-blob-util@npm:^0.18.0":
+  version: 0.18.6
+  resolution: "react-native-blob-util@npm:0.18.6"
+  dependencies:
+    base-64: 0.1.0
+    glob: ^7.2.3
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 9fa0e8429609c822e2d7eba2434bcb8bd44a56f719aee1cd29313f1e8d81fbee37bb55637a3a032ec897d4be4b05ffedb084edf5034f56b1640fd55999673ccb
+  languageName: node
+  linkType: hard
+
+"react-native-blob-util@npm:^0.19.9":
+  version: 0.19.9
+  resolution: "react-native-blob-util@npm:0.19.9"
+  dependencies:
+    base-64: 0.1.0
+    glob: ^10.3.10
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 1bb315965cabc9858f022d54da998a9d312b731f21da3e04783a593a10a41d8aa37c479b91e4deaae180b751472823ea524c4c74b3a16ed359b66a3a9e284d09
+  languageName: node
+  linkType: hard
+
+"react-native-gesture-handler@npm:^2.16.2":
+  version: 2.16.2
+  resolution: "react-native-gesture-handler@npm:2.16.2"
+  dependencies:
+    "@egjs/hammerjs": ^2.0.17
+    hoist-non-react-statics: ^3.3.0
+    invariant: ^2.2.4
+    lodash: ^4.17.21
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 3f3309de471b8de654624c54793f6d72236869156ee61c1adc8bba0f4aca6ffc8ed02035eb85820473091d33eb5ec8b42a0e387a21ec25dc30ee345dff0c1142
+  languageName: node
+  linkType: hard
+
+"react-native-orientation-locker@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "react-native-orientation-locker@npm:1.7.0"
+  peerDependencies:
+    react: ">=16.13.1"
+    react-native: ">=0.63.2"
+    react-native-windows: ">=0.63.3"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: 495010b3150adcbc1dcb24e0ca5c13838f02dbcee7c6ec391fe07bd47f9b75ac57b0ec1144aaab5d6ed62e7a354497e9fa5399359d896099ecbea439908817cf
+  languageName: node
+  linkType: hard
+
+"react-native-reanimated-carousel@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "react-native-reanimated-carousel@npm:3.5.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-native: ">=0.6.0"
+    react-native-gesture-handler: ">=2.0.0"
+    react-native-reanimated: ">=3.0.0"
+  checksum: a2eb640453fa35f659c1fb5575f903364d513fb7f621104afa14fee2284132674dfaf0d87cb29e8c119f7513094a5967d5193f3dfa24043af167c6f26abcfe73
+  languageName: node
+  linkType: hard
+
+"react-native-reanimated@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "react-native-reanimated@npm:3.11.0"
+  dependencies:
+    "@babel/plugin-transform-arrow-functions": ^7.0.0-0
+    "@babel/plugin-transform-nullish-coalescing-operator": ^7.0.0-0
+    "@babel/plugin-transform-optional-chaining": ^7.0.0-0
+    "@babel/plugin-transform-shorthand-properties": ^7.0.0-0
+    "@babel/plugin-transform-template-literals": ^7.0.0-0
+    "@babel/preset-typescript": ^7.16.7
+    convert-source-map: ^2.0.0
+    invariant: ^2.2.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+    react: "*"
+    react-native: "*"
+  checksum: 5d0c6be5c9b6d933755e50895a1ec903100800a83b7b48fbc6a4242063f0de52a78f5af69d39da4241f6071a4416602f150c3a53e9a97d20880edb3612ffadbd
   languageName: node
   linkType: hard
 
@@ -8480,6 +8606,15 @@ __metadata:
     source-map: ~0.6.1
     tslib: ^2.0.1
   checksum: 03cc7f57562238ba258d468be67bf7446ce7a707bc87a087891dad15afead46c36e9aaeedf2130e2ab5a465244a9c62bfd4127849761cf8f4085abe2f3e5f485
+  languageName: node
+  linkType: hard
+
+"redux-persist-filesystem-storage@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "redux-persist-filesystem-storage@npm:4.2.0"
+  dependencies:
+    react-native-blob-util: ^0.18.0
+  checksum: c2edeb92b72874ab08c7a34e9dae8a06ac13c4a5b238d92e798ec0355027a99eb0c27c6b4c95b8c0efda8123a50f9c232e7a215a97726f07dc4af73a991ac343
   languageName: node
   linkType: hard
 

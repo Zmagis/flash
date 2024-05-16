@@ -5,4 +5,5 @@ export enum Route {
   User = 'User',
   Root = 'Root',
   Game = 'Game',
+  Onboard = 'Onboard',
 }

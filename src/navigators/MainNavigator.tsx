@@ -4,14 +4,32 @@ import {TabNavigator} from './TabNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {GameModalScreen} from '@screens/GameModalScreen';
 import {Route} from '@types/routes';
+import {OnboardScreen} from '@screens/OnboardScreen';
 
 const Stack = createNativeStackNavigator();
 
-export const MainNavigator = () => (
+export const MainNavigator = ({onboarded}) => (
   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name={Route.Root} component={TabNavigator} />
-      <Stack.Screen name={Route.Game} component={GameModalScreen} />
+    <Stack.Navigator
+      initialRouteName={onboarded ? Route.Root : Route.Onboard}
+      screenOptions={{
+        headerLeft: () => null,
+      }}>
+      <Stack.Screen
+        name={Route.Root}
+        component={TabNavigator}
+        options={{title: ''}}
+      />
+      <Stack.Screen
+        name={Route.Game}
+        component={GameModalScreen}
+        options={{title: ''}}
+      />
+      <Stack.Screen
+        name={Route.Onboard}
+        component={OnboardScreen}
+        options={{title: ''}}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );

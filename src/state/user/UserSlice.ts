@@ -5,7 +5,7 @@ export interface UserState {
 }
 
 export const INITIAL_STATE: UserState = {
-  userName: 'TestName',
+  userName: '',
 };
 
 export const userSlice = createSlice({
@@ -13,7 +13,6 @@ export const userSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     setUserName: (state, {payload}: PayloadAction<string>) => {
-      console.log('setUserName', payload);
       state.userName = payload;
     },
   },

@@ -5,7 +5,7 @@ import {Text} from 'react-native';
 export const HistoryScreen = memo(() => {
   return (
     <ScreenContainer>
-      <Text>History</Text>
+      <Text>We're working on it and can't wait to share when it's ready.</Text>
     </ScreenContainer>
   );
 });

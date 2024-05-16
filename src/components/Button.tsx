@@ -1,14 +1,14 @@
-import React, {PropsWithChildren, memo} from 'react';
-import {GestureResponderEvent} from 'react-native';
+import React, {memo} from 'react';
+import {GestureResponderEvent, TouchableOpacityProps} from 'react-native';
 import styled from 'styled-components/native';
 
-type ButtonProps = PropsWithChildren<{
+type ButtonProps = TouchableOpacityProps & {
   onPress: (event: GestureResponderEvent) => void;
-}>;
+};
 
-export const Button = memo<ButtonProps>(({children, onPress}) => {
+export const Button = memo<ButtonProps>(({children, onPress, ...rest}) => {
   return (
-    <Container disabled={false} onPress={onPress}>
+    <Container disabled={false} style={rest.style} onPress={onPress}>
       <Text>{children}</Text>
     </Container>
   );

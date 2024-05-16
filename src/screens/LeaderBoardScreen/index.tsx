@@ -5,7 +5,7 @@ import {Text} from 'react-native';
 export const LeaderBoardScreen = memo(() => {
   return (
     <ScreenContainer>
-      <Text>LeaderBoard</Text>
+      <Text>We're working on it and can't wait to share when it's ready.</Text>
     </ScreenContainer>
   );
 });
