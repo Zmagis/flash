@@ -20,12 +20,12 @@ export const GameModalScreen = memo(() => {
   const playAgain = useCallback(() => setGameState(GameState.Playing), []);
 
   return (
-    <ScreenContainer>
+    <ScreenContainer scrollEnabled={false}>
       <Timer startTimer={gameState === GameState.Playing} onTimeEnd={endGame} />
+      <GameBody gameState={gameState} />
       {gameState === GameState.Initial && (
         <Button onPress={startGame}>Play</Button>
       )}
-      <GameBody gameState={gameState} />
       {gameState === GameState.Finished && (
         <Button onPress={playAgain}>Play again</Button>
       )}

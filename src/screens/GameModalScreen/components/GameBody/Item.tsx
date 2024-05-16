@@ -22,9 +22,8 @@ export const Item = memo<ButtonProps>(
         android_disableSound
         active={active}
         width={width}
-        onPress={press}>
-        <Text>{id}</Text>
-      </Container>
+        onPress={press}
+      />
     );
   },
 );

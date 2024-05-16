@@ -32,6 +32,7 @@ const Container = styled.View<{width?: number}>`
 const Label = styled.Text`
   margin-bottom: 8px;
   font-weight: 700;
+  color: ${({theme}) => theme.colors.text};
 `;
 
 const ErrorMessage = styled.Text`

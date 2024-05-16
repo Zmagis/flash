@@ -24,5 +24,6 @@ const Container = styled.View`
 
 const Text = styled.Text`
   font-weight: 700;
+  font-size: 12px;
   color: ${({theme}) => theme.colors.lightText};
 `;

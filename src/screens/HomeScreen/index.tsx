@@ -13,7 +13,7 @@ export const HomeScreen = memo(({navigation}) => {
   return (
     <ScreenContainer>
       <Text>{userName}, let's see what you've got!</Text>
-      <Button onPress={openGameModal}>Start the game</Button>
+      <Button onPress={openGameModal}>Flash game</Button>
     </ScreenContainer>
   );
 });
@@ -23,4 +23,5 @@ const Text = styled.Text`
   font-size: 24px;
   text-align: center;
   font-weight: 700;
+  color: ${({theme}) => theme.colors.text};
 `;

@@ -100,8 +100,10 @@ const Title = styled.Text`
   font-weight: 700;
   text-align: center;
   padding-bottom: 16px;
+  color: ${({theme}) => theme.colors.text};
 `;
 
 const Description = styled.Text`
   text-align: center;
+  color: ${({theme}) => theme.colors.text};
 `;

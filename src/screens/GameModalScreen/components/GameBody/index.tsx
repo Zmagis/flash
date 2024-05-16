@@ -1,10 +1,10 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components/native';
 import {Item} from './Item';
-import {Text, View} from 'react-native';
 import {GameState} from '../..';
 import Sound from 'react-native-sound';
 import {Loader} from '@components/Loader';
+import Orientation from 'react-native-orientation-locker';
 
 const ITEMS_COUNT = 16;
 const ITEMS = Array.from({length: ITEMS_COUNT}, (_, index) => index + 1);
@@ -42,6 +42,8 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
   );
 
   useEffect(() => {
+    Orientation.lockToPortrait();
+
     accuarateSound.current = new Sound(
       'accurateclick.mp3',
       Sound.MAIN_BUNDLE,
@@ -68,22 +70,42 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
   }, [gameState]);
 
   return (
-    <View>
-      <Text>Strike - {strike}</Text>
-      <Text>Score - {score}</Text>
+    <Container>
+      <Results>
+        <Text>Strike: {strike}</Text>
+        <Text>Score: {score}</Text>
+      </Results>
       {(loadingAccurateAudio || loadingMissedAudio) && <Loader />}
       {gameState === GameState.Playing && (
-        <Container>
+        <Items>
           {ITEMS.map((id, index) => (
             <Item key={index} id={id} active={id === number} onPress={press} />
           ))}
-        </Container>
+        </Items>
       )}
-    </View>
+    </Container>
   );
 });
 
 const Container = styled.View`
+  flex-wrap: wrap;
+  height: 100%;
+  flex: 1;
+  gap: 16px;
+`;
+
+const Results = styled.View`
+  flex-direction: row;
+  margin-top: 8px;
+`;
+
+const Text = styled.Text`
+  width: 50%;
+  text-align: center;
+  color: ${({theme}) => theme.colors.text};
+`;
+
+const Items = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   height: 100%;

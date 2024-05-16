@@ -6,5 +6,6 @@ export const HEADER_HEIGHT = 56;
 
 export const SCREEN_PADDING = {
   horizontal: 16,
-  vertical: 24,
+  top: 24,
+  bottom: 32,
 };
