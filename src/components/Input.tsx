@@ -1,21 +1,21 @@
-import React, {PropsWithChildren, memo} from 'react';
+import React, {memo} from 'react';
+import {TextInputProps} from 'react-native';
 import styled from 'styled-components/native';
 
-type InputProps = PropsWithChildren<{
-  value: string;
-  placeholder?: string;
+type InputProps = TextInputProps & {
   label?: string;
   error?: string;
   onChangeText: (text: string) => void;
-}>;
+};
 
 export const Input = memo<InputProps>(
-  ({value, placeholder, label, error, onChangeText}) => {
+  ({value, placeholder, label, error, maxLength, onChangeText}) => {
     return (
       <Container>
         {label && <Label>{label}</Label>}
         <TextInput
           value={value}
+          maxLength={maxLength}
           placeholder={placeholder}
           onChangeText={onChangeText}
         />

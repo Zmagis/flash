@@ -6,6 +6,7 @@ import {setUserName} from '@state/user/UserSlice';
 import {Button} from '@components/Button';
 import {Input} from '@components/Input';
 import styled from 'styled-components/native';
+import {USER_NAME_LENGTH} from '@constants/user';
 
 export const NewUserForm = memo(() => {
   const results = useAppSelector(state => state.results.results);
@@ -13,7 +14,7 @@ export const NewUserForm = memo(() => {
 
   const [name, setName] = useState('');
 
-  const users = useMemo(() => Object.keys(results), [results]);
+  const users = useMemo(() => (results ? Object.keys(results) : []), [results]);
 
   const updateName = useCallback((text: string) => {
     setName(text);
@@ -29,6 +30,7 @@ export const NewUserForm = memo(() => {
       <Input
         value={name}
         label={'Add new user'}
+        maxLength={USER_NAME_LENGTH}
         error={users.includes(name) ? 'User already exists' : ''}
         onChangeText={updateName}
       />

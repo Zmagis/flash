@@ -1,8 +1,10 @@
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useCallback, useEffect, useState} from 'react';
 import {Timer} from './components/Timer';
 import {GameBody} from './components/GameBody';
 import {Button} from '@components/Button';
 import {ScreenContainer} from '@components/ScreenContainer';
+import {useNavigation} from '@hooks/useNavigate';
+import {useAppSelector} from '@state/hooks';
 
 export enum GameState {
   Initial = 'Initial',
@@ -11,6 +13,8 @@ export enum GameState {
 }
 
 export const GameModalScreen = memo(() => {
+  const userName = useAppSelector(state => state.user.userName);
+  const navigation = useNavigation();
   const [gameState, setGameState] = useState(GameState.Initial);
 
   const startGame = useCallback(() => setGameState(GameState.Playing), []);
@@ -18,6 +22,12 @@ export const GameModalScreen = memo(() => {
   const endGame = useCallback(() => setGameState(GameState.Finished), []);
 
   const playAgain = useCallback(() => setGameState(GameState.Playing), []);
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: `${userName}, let's go!`,
+    });
+  }, []);
 
   return (
     <ScreenContainer scrollEnabled={false}>

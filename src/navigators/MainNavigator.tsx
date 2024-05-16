@@ -16,11 +16,7 @@ export const MainNavigator = ({onboarded}) => (
         component={TabNavigator}
         options={{title: ''}}
       />
-      <Stack.Screen
-        name={Route.Game}
-        component={GameModalScreen}
-        options={{title: ''}}
-      />
+      <Stack.Screen name={Route.Game} component={GameModalScreen} />
       <Stack.Screen
         name={Route.Onboard}
         component={OnboardScreen}
