@@ -8,6 +8,7 @@ Challenge your reflexes with this fast-paced game!
 
 ```bash
 # OR using Yarn
+yarn add
 yarn start
 yarn ios
 yarn android
@@ -17,5 +18,6 @@ yarn android
 
 ```bash
 cd ios
+bundle install
 bundle exec pod install
 ```

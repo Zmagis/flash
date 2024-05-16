@@ -21,7 +21,7 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
   const userName = useAppSelector(state => state.user.userName);
   const results = useAppSelector(state => state.results.results);
   const dispatch = useAppDispatch();
-  const accuarateSound = useRef<Sound | null>();
+  const accurateSound = useRef<Sound | null>();
   const missedSound = useRef<Sound | null>();
   const [loadingAccurateAudio, setLoadingAccurateAudio] = useState(true);
   const [loadingMissedAudio, setLoadingMissedAudio] = useState(true);
@@ -34,7 +34,7 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
       if (id === number) {
         setNumber(getActiveItemNumber());
         setStrike(prevStrike => prevStrike + 1);
-        accuarateSound.current?.setCurrentTime(0).play();
+        accurateSound.current?.setCurrentTime(0).play();
         if (strike >= 5) {
           setScore(score + 5);
         } else {
@@ -45,7 +45,7 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
         setStrike(0);
       }
     },
-    [number, strike, score, accuarateSound, missedSound],
+    [number, strike, score, accurateSound, missedSound],
   );
 
   const saveScore = useCallback(async () => {
@@ -71,7 +71,7 @@ export const GameBody = memo<GameBodyProps>(({gameState}) => {
   useEffect(() => {
     Orientation.lockToPortrait();
 
-    accuarateSound.current = new Sound(
+    accurateSound.current = new Sound(
       'accurateclick.mp3',
       Sound.MAIN_BUNDLE,
       () => {

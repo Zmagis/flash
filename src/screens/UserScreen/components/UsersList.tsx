@@ -11,7 +11,7 @@ export const UsersList = memo(() => {
   const results = useAppSelector(state => state.results.results);
   const dispatch = useAppDispatch();
 
-  const checkResultsInSrorage = useCallback(async () => {
+  const checkResultsInStorage = useCallback(async () => {
     const rawResults = await storage.getItem(storageKeys.RESULTS);
     const newResults = JSON.parse(rawResults);
 
@@ -22,7 +22,7 @@ export const UsersList = memo(() => {
 
   useEffect(() => {
     if (!results) {
-      checkResultsInSrorage();
+      checkResultsInStorage();
     }
   }, []);
 
