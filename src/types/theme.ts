@@ -11,6 +11,7 @@ declare module 'styled-components/native' {
     secondary: string;
     text: string;
     lightText: string;
+    disabled: string;
     error: string;
   }
 }

@@ -1,5 +1,4 @@
 import React, {PropsWithChildren, memo, useCallback} from 'react';
-import {Text} from 'react-native';
 import styled from 'styled-components/native';
 
 const WIDTH = 25;

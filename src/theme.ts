@@ -5,6 +5,7 @@ const colors: AppColors = {
   secondary: '#9884FC',
   text: '#000000',
   lightText: '#fafbfc',
+  disabled: '#D3D3D3',
   error: '#FF0000',
 };
 

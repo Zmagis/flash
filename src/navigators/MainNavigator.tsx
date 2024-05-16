@@ -10,11 +10,7 @@ const Stack = createNativeStackNavigator();
 
 export const MainNavigator = ({onboarded}) => (
   <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName={onboarded ? Route.Root : Route.Onboard}
-      screenOptions={{
-        headerLeft: () => null,
-      }}>
+    <Stack.Navigator initialRouteName={onboarded ? Route.Root : Route.Onboard}>
       <Stack.Screen
         name={Route.Root}
         component={TabNavigator}

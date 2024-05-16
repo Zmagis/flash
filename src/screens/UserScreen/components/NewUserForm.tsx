@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useState} from 'react';
+import React, {memo, useCallback, useMemo, useState} from 'react';
 
 import {useAppDispatch, useAppSelector} from '@state/hooks';
 import {setUserName} from '@state/user/UserSlice';
@@ -8,10 +8,12 @@ import {Input} from '@components/Input';
 import styled from 'styled-components/native';
 
 export const NewUserForm = memo(() => {
-  const userName = useAppSelector(state => state.user.userName);
+  const results = useAppSelector(state => state.results.results);
   const dispatch = useAppDispatch();
 
-  const [name, setName] = useState(userName);
+  const [name, setName] = useState('');
+
+  const users = useMemo(() => Object.keys(results), [results]);
 
   const updateName = useCallback((text: string) => {
     setName(text);
@@ -19,6 +21,7 @@ export const NewUserForm = memo(() => {
 
   const saveName = useCallback(() => {
     dispatch(setUserName(name));
+    setName('');
   }, [name]);
 
   return (
@@ -26,10 +29,12 @@ export const NewUserForm = memo(() => {
       <Input
         value={name}
         label={'Add new user'}
-        // error={'User already exists'}
+        error={users.includes(name) ? 'User already exists' : ''}
         onChangeText={updateName}
       />
-      <Button onPress={saveName}>Add</Button>
+      <Button disabled={users.includes(name) || !name} onPress={saveName}>
+        Add
+      </Button>
     </Container>
   );
 });

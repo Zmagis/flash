@@ -1,1 +1,4 @@
-export const storageKeys = {CURRENT_PLAYER: 'CURRENT_PLAYER'};
+export const storageKeys = {
+  CURRENT_PLAYER: 'CURRENT_PLAYER',
+  RESULTS: 'RESULTS',
+};
